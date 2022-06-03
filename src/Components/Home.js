@@ -11,15 +11,13 @@ export default function Home(){
 
 
     return (
-        <>
-            <Logo src={plan.image} />
             <Content>
+                <Logo src={plan.image} />
                 <Greeting>Olá, {name}</Greeting>
                 {plan.perks.map(perk => <Perk onClick={() => window.open(perk.link)}>{perk.title}</Perk> )}
 
                 <HomeBottom />        
             </Content>
-        </>
     )
 }
 
@@ -30,16 +28,12 @@ margin: 30px;
 
 `
 
-const Planos = styled.div`
-width: 200px;
-height: 100px;
-background-color: white;
-`
 
 const Content = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: space-between;
 
 `
 

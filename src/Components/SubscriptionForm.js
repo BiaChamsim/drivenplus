@@ -91,15 +91,17 @@ export default function SubscriptionForm(){
         <>
             
             <Content>
-                <Back src={Vector} onClick={backHome}></Back>
-                <Head>
-                    <img src={image}></img>
-                    <h1>{name}</h1>
-                </Head>
-                <BenefitTitle>Benefícios:</BenefitTitle>
-                {perks.map((perk, index) => <Paragraph>{index+1}. {perk.title}</Paragraph>)}
-                <PriceTitle>Preço:</PriceTitle>
-                <Price>R$ {price} cobrados mensalmente</Price>
+                <PriceAndBenefits>
+                    <Back src={Vector} onClick={backHome}></Back>
+                    <Head>
+                        <img src={image}></img>
+                        <h1>{name}</h1>
+                    </Head>
+                    <BenefitTitle>Benefícios:</BenefitTitle>
+                    {perks.map((perk, index) => <Paragraph>{index+1}. {perk.title}</Paragraph>)}
+                    <PriceTitle>Preço:</PriceTitle>
+                    <Price>R$ {price} cobrados mensalmente</Price>
+                </PriceAndBenefits>
                 <Inputs>
                     <Input placeholder="Nome impresso no cartão" required value={cardName} onChange={(event) => setCardName(event.target.value)} />
                     <Input placeholder="Dígitos do cartão" required value={cardNumber} onChange={(event) => setCardNumber(event.target.value)}/>
@@ -137,27 +139,27 @@ export default function SubscriptionForm(){
 const Back = styled.img`
 width: 28px;
 height: 28px;
-margin-left: 22px;
 
 `
 
 const BenefitTitle = styled.div`
 color: #FFFFFF;
 margin-bottom: 10px;
-margin-left: 40px;
+
 `
 
 const PriceTitle = styled.div`
 color: #FFFFFF;
 margin-top: 12px;
 margin-bottom: 10px;
-margin-left: 40px;
+
 `
 
 const Head = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-left: 70px;
 
 img{
     width: 140px;
@@ -174,21 +176,29 @@ h1{
 const Price = styled.div`
 color: #FFFFFF;
 margin-bottom: 20px;
-margin-left: 40px;
+
 
 `
 
 const Content = styled.div`
-    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+`
+
+const PriceAndBenefits = styled.div`
+width: 300px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
 `
 
 const Inputs = styled.div`
 width: 300px;
-margin-left: 30px;
+
 `
 
 const Input = styled.input`
@@ -203,7 +213,7 @@ padding-left: 14px;
 
 const Paragraph = styled.div`
 color: #FFFFFF;
-margin-left: 40px;
+
 `
 
 const CodigoeValidade = styled.div`

@@ -76,7 +76,7 @@ const Content = styled.div`
 
 const Input = styled.input`
 
-    width: 100%;
+    width: 300px;
     height: 52px;
     background: #FFFFFF;
     border-radius: 8px;
