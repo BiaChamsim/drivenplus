@@ -10,8 +10,8 @@ export default function Login(){
 
     const {setToken, setName, setPlan} = useContext(ContextToken);
 
-    const [email, setEmail] = useState("biabee-@hotmail.com");
-    const [senha, setSenha] = useState("123");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
